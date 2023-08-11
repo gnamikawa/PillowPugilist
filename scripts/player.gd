@@ -5,7 +5,9 @@ extends CharacterBody2D
 @export var angle_spread = 0.6
 @export var speed = 300
 @export var slow_speed = 100 
-@onready var bullet_node = preload('res://scenes/bullet.tscn')
+@export var current_weapon: Weapon = load('res://data/weapons/default_weapon.tres')
+var timer = 0
+const MIN_SHOTS_PER_MINUTE = 1 # Just to avoid division by 0...
 
 # Returns the speed in pixels per second
 func get_speed():
@@ -28,8 +30,11 @@ func _ready():
 	print('player ready')
 
 func _process(delta):
-	if Input.is_key_pressed(KEY_SPACE):
-		var bullet = bullet_node.instantiate() as Bullet;
+	timer += delta
+	var shooting_rate = 60 / max(MIN_SHOTS_PER_MINUTE, current_weapon.shots_per_minute)
+	if Input.is_key_pressed(KEY_SPACE) and timer > shooting_rate:
+		timer -= shooting_rate
+		var bullet = current_weapon.bullet_scene.instantiate() as Bullet;
 		bullet.position = position
 		bullet.player_spawned = true
 		bullet.direction = Vector2(sign(velocity.x) * angle_spread, -1).normalized()
