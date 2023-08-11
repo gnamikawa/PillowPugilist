@@ -1,21 +1,21 @@
 [gd_scene load_steps=8 format=3 uid="uid://wss1yuqy0vg2"]
 
-[ext_resource type="Texture2D" uid="uid://dcdn3ruc3amew" path="res://sprites/debug.png" id="1_12abl"]
+[ext_resource type="Texture2D" uid="uid://dcdn3ruc3amew" path="res://assets/sprites/debug.png" id="1_5lb5x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmulk"]
-atlas = ExtResource("1_12abl")
+atlas = ExtResource("1_5lb5x")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kn1be"]
-atlas = ExtResource("1_12abl")
+atlas = ExtResource("1_5lb5x")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f8etw"]
-atlas = ExtResource("1_12abl")
+atlas = ExtResource("1_5lb5x")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mjikj"]
-atlas = ExtResource("1_12abl")
+atlas = ExtResource("1_5lb5x")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sr6gg"]
