@@ -1,3 +1,46 @@
-[gd_scene format=3 uid="uid://behsc7nbuvu2g"]
+[gd_scene load_steps=7 format=3 uid="uid://behsc7nbuvu2g"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ff2bm"]
+[ext_resource type="PackedScene" uid="uid://wss1yuqy0vg2" path="res://scenes/player_body.tscn" id="2_1cg6l"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wh081"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k7axj"]
+normal = Vector2(0, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w3axx"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sl4yg"]
+normal = Vector2(-1, 0)
 
 [node name="GameManager" type="Node2D"]
+script = ExtResource("1_ff2bm")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_1cg6l")]
+position = Vector2(579, 597)
+motion_mode = 1
+
+[node name="WorldBoundary" type="Node" parent="."]
+
+[node name="LeftWall" type="StaticBody2D" parent="WorldBoundary"]
+
+[node name="Collider" type="CollisionShape2D" parent="WorldBoundary/LeftWall"]
+shape = SubResource("WorldBoundaryShape2D_wh081")
+
+[node name="TopWall" type="StaticBody2D" parent="WorldBoundary"]
+
+[node name="Collider" type="CollisionShape2D" parent="WorldBoundary/TopWall"]
+shape = SubResource("WorldBoundaryShape2D_k7axj")
+
+[node name="BottomWall" type="StaticBody2D" parent="WorldBoundary"]
+position = Vector2(1152, 646)
+
+[node name="Collider" type="CollisionShape2D" parent="WorldBoundary/BottomWall"]
+shape = SubResource("WorldBoundaryShape2D_w3axx")
+
+[node name="RightWall" type="StaticBody2D" parent="WorldBoundary"]
+position = Vector2(1152, 646)
+
+[node name="Collider" type="CollisionShape2D" parent="WorldBoundary/RightWall"]
+shape = SubResource("WorldBoundaryShape2D_sl4yg")
