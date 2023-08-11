@@ -14,3 +14,14 @@ func _init(p_shots_per_minute = 60, p_name = 'Weapon', p_bullet_scene = 'res://s
 	shots_per_minute = p_shots_per_minute
 	name = p_name
 	bullet_scene = load(p_bullet_scene)
+
+func shoot(bullet_parent, direction = Vector2(0, 1), position = Vector2(0, 0), overwrite_position = false, player_spawned = false):
+	var bullet = bullet_scene.instantiate() as Bullet;
+	if overwrite_position:
+		bullet.position = position
+	bullet.player_spawned = player_spawned
+	bullet.direction = direction
+	print('spawning : ', bullet.spin_speed)
+	# Adds the bullet to the scene tree
+	# (necessary as otherwise it won't render!)
+	bullet_parent.add_child(bullet)

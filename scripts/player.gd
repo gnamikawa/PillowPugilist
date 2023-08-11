@@ -2,7 +2,7 @@ class_name PlayerObject
 
 extends CharacterBody2D
 
-@export var angle_spread = 0.6
+@export var angle_spread = 0.6 # Modifies how wide the angle is during shooting while moving diagonally or horizontally
 @export var speed = 300
 @export var slow_speed = 100 
 @export var current_weapon: Weapon = load('res://data/weapons/default_weapon.tres')
@@ -34,11 +34,15 @@ func _process(delta):
 	var shooting_rate = 60 / max(MIN_SHOTS_PER_MINUTE, current_weapon.shots_per_minute)
 	if Input.is_key_pressed(KEY_SPACE) and timer > shooting_rate:
 		timer -= shooting_rate
-		var bullet = current_weapon.bullet_scene.instantiate() as Bullet;
-		bullet.position = position
-		bullet.player_spawned = true
-		bullet.direction = Vector2(sign(velocity.x) * angle_spread, -1).normalized()
-		get_parent().add_child(bullet)
+
+		# Spawn the bullet
+		current_weapon.shoot(
+			get_parent(),
+			Vector2(sign(velocity.x) * angle_spread, -1).normalized(),
+			position,
+			true,
+			true
+		)
 
 func _physics_process(delta):
 	get_input()

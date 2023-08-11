@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://wss1yuqy0vg2"]
+[gd_scene load_steps=11 format=3 uid="uid://wss1yuqy0vg2"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_06625"]
+[ext_resource type="Resource" uid="uid://bcgkjhk7ekmq5" path="res://data/weapons/default_weapon.tres" id="2_p3ko0"]
 [ext_resource type="Texture2D" uid="uid://e5wroq0fsgei" path="res://assets/sprites/Maya.png" id="2_rfx0n"]
 [ext_resource type="Texture2D" uid="uid://3fny6mj7pra2" path="res://assets/sprites/Hitcenter.png" id="2_rury2"]
 
@@ -45,6 +46,7 @@ radius = 2.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_06625")
+current_weapon = ExtResource("2_p3ko0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1000
