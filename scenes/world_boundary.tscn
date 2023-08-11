@@ -13,23 +13,23 @@ normal = Vector2(-1, 0)
 
 [node name="WorldBoundary" type="Node"]
 
-[node name="LeftWall" type="StaticBody2D" parent="."]
+[node name="LeftWall" type="StaticBody2D" parent="." groups=["walls"]]
 
 [node name="Collider" type="CollisionShape2D" parent="LeftWall"]
 shape = SubResource("WorldBoundaryShape2D_wh081")
 
-[node name="TopWall" type="StaticBody2D" parent="."]
+[node name="TopWall" type="StaticBody2D" parent="." groups=["walls"]]
 
 [node name="Collider" type="CollisionShape2D" parent="TopWall"]
 shape = SubResource("WorldBoundaryShape2D_k7axj")
 
-[node name="BottomWall" type="StaticBody2D" parent="."]
+[node name="BottomWall" type="StaticBody2D" parent="." groups=["walls"]]
 position = Vector2(270, 480)
 
 [node name="Collider" type="CollisionShape2D" parent="BottomWall"]
 shape = SubResource("WorldBoundaryShape2D_w3axx")
 
-[node name="RightWall" type="StaticBody2D" parent="."]
+[node name="RightWall" type="StaticBody2D" parent="." groups=["walls"]]
 position = Vector2(270, 480)
 
 [node name="Collider" type="CollisionShape2D" parent="RightWall"]

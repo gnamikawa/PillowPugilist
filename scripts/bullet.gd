@@ -17,3 +17,7 @@ func _process(delta):
 		BulletType.LINEAR:
 			position.y += -delta * speed
 	pass
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group('walls'):
+		queue_free()
