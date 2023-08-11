@@ -44,6 +44,7 @@ radius = 3.16228
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1000
 sprite_frames = SubResource("SpriteFrames_sr6gg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
