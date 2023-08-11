@@ -28,10 +28,10 @@ func _ready():
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_SPACE):
-		print('!')
 		var bullet = bullet_node.instantiate() as Bullet;
 		bullet.position = position
 		bullet.player_spawned = true
+		bullet.direction = Vector2(sign(velocity.x), -1).normalized()
 		get_parent().add_child(bullet)
 
 func _physics_process(delta):
