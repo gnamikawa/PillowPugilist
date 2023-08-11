@@ -1,3 +1,40 @@
-[gd_scene format=3 uid="uid://behsc7nbuvu2g"]
+[gd_scene load_steps=9 format=3 uid="uid://behsc7nbuvu2g"]
+
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ff2bm"]
+[ext_resource type="PackedScene" uid="uid://wss1yuqy0vg2" path="res://scenes/player_body.tscn" id="2_1cg6l"]
+[ext_resource type="PackedScene" uid="uid://btj7uqo5vmyou" path="res://scenes/world_boundary.tscn" id="3_kyhf4"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_so774"]
+[ext_resource type="Script" path="res://scripts/background_scroller.gd" id="5_ovqoh"]
+
+[sub_resource type="Gradient" id="Gradient_hjevu"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2i4wl"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cwok0"]
+width = 540
+height = 960
+color_ramp = SubResource("Gradient_hjevu")
+noise = SubResource("FastNoiseLite_2i4wl")
 
 [node name="GameManager" type="Node2D"]
+position = Vector2(0, 1)
+script = ExtResource("1_ff2bm")
+
+[node name="Background" type="Node" parent="."]
+
+[node name="BackgroundScrollerA" type="Sprite2D" parent="Background"]
+position = Vector2(270, 480)
+texture = SubResource("NoiseTexture2D_cwok0")
+script = ExtResource("5_ovqoh")
+
+[node name="BackgroundScrollerB" type="Sprite2D" parent="Background"]
+position = Vector2(270, -480)
+texture = SubResource("NoiseTexture2D_cwok0")
+script = ExtResource("5_ovqoh")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_1cg6l")]
+position = Vector2(284, 796)
+motion_mode = 1
+script = ExtResource("3_so774")
+
+[node name="WorldBoundary" parent="." instance=ExtResource("3_kyhf4")]
