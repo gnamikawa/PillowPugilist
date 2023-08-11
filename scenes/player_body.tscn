@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://wss1yuqy0vg2"]
+[gd_scene load_steps=9 format=3 uid="uid://wss1yuqy0vg2"]
 
 [ext_resource type="Texture2D" uid="uid://dcdn3ruc3amew" path="res://assets/sprites/debug.png" id="1_5lb5x"]
+[ext_resource type="Texture2D" uid="uid://3fny6mj7pra2" path="res://assets/sprites/Hitcenter.png" id="2_rury2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmulk"]
 atlas = ExtResource("1_5lb5x")
@@ -39,13 +40,17 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vhybu"]
-radius = 3.16228
+radius = 2.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1000
 sprite_frames = SubResource("SpriteFrames_sr6gg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1100
+texture = ExtResource("2_rury2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vhybu")

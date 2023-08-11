@@ -1,9 +1,11 @@
+class_name BackgroundScroller
+
 extends Sprite2D
 
-@export var speed = 100;
+const SPEED = 10;
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position.y += speed * delta
+	position.y += SPEED * delta
 	if position.y >= get_viewport_rect().size.y * 1.5:
 		position.y = get_viewport_rect().size.y * -0.5

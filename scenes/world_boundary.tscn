@@ -24,13 +24,13 @@ shape = SubResource("WorldBoundaryShape2D_wh081")
 shape = SubResource("WorldBoundaryShape2D_k7axj")
 
 [node name="BottomWall" type="StaticBody2D" parent="."]
-position = Vector2(537, 958)
+position = Vector2(270, 480)
 
 [node name="Collider" type="CollisionShape2D" parent="BottomWall"]
 shape = SubResource("WorldBoundaryShape2D_w3axx")
 
 [node name="RightWall" type="StaticBody2D" parent="."]
-position = Vector2(537, 958)
+position = Vector2(270, 480)
 
 [node name="Collider" type="CollisionShape2D" parent="RightWall"]
 shape = SubResource("WorldBoundaryShape2D_sl4yg")
