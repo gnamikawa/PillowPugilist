@@ -3,7 +3,8 @@ class_name PlayerObject
 extends CharacterBody2D
 
 @export var speed = 300
-@export var slow_speed = 100
+@export var slow_speed = 100 
+@onready var bullet_node = preload('res://scenes/bullet.tscn')
 
 # Returns the speed in pixels per second
 func get_speed():
@@ -24,6 +25,14 @@ func get_input():
 
 func _ready():
 	print('player ready')
+
+func _process(delta):
+	if Input.is_key_pressed(KEY_SPACE):
+		print('!')
+		var bullet = bullet_node.instantiate() as Bullet;
+		bullet.position = position
+		bullet.player_spawned = true
+		get_parent().add_child(bullet)
 
 func _physics_process(delta):
 	get_input()
