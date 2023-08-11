@@ -33,7 +33,7 @@ func _process(delta):
 	timer += delta
 	var shooting_rate = 60 / max(MIN_SHOTS_PER_MINUTE, current_weapon.shots_per_minute)
 	if Input.is_key_pressed(KEY_SPACE) and timer > shooting_rate:
-		timer -= shooting_rate
+		timer = 0
 
 		# Spawn the bullet
 		current_weapon.shoot(
