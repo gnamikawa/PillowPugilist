@@ -2,6 +2,7 @@ class_name PlayerObject
 
 extends CharacterBody2D
 
+@export var angle_spread = 0.6
 @export var speed = 300
 @export var slow_speed = 100 
 @onready var bullet_node = preload('res://scenes/bullet.tscn')
@@ -31,7 +32,7 @@ func _process(delta):
 		var bullet = bullet_node.instantiate() as Bullet;
 		bullet.position = position
 		bullet.player_spawned = true
-		bullet.direction = Vector2(sign(velocity.x), -1).normalized()
+		bullet.direction = Vector2(sign(velocity.x) * angle_spread, -1).normalized()
 		get_parent().add_child(bullet)
 
 func _physics_process(delta):

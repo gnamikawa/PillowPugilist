@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0rxrdc8ft3gr"]
 
-[ext_resource type="Texture2D" uid="uid://3fny6mj7pra2" path="res://assets/sprites/Hitcenter.png" id="1_w0ltq"]
+[ext_resource type="Texture2D" uid="uid://cjpatpsj4dpxu" path="res://assets/sprites/Missile1.png" id="1_irkon"]
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="2_t5s8w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gso2y"]
@@ -8,7 +8,7 @@ radius = 5.0
 
 [node name="Bullet" type="Sprite2D"]
 z_index = 500
-texture = ExtResource("1_w0ltq")
+texture = ExtResource("1_irkon")
 script = ExtResource("2_t5s8w")
 
 [node name="Area2D" type="Area2D" parent="."]
