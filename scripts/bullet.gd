@@ -26,3 +26,7 @@ func _process(delta):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('walls'):
 		queue_free()
+	if body.is_in_group('player') and not player_spawned:
+		pass
+	if body.is_in_group('enemy') and player_spawned:
+		(body as Enemy).damage(damage)
