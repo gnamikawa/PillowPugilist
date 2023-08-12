@@ -10,6 +10,7 @@ radius = 5.0
 z_index = 500
 texture = ExtResource("1_2gfhe")
 script = ExtResource("2_ao41s")
+speed = 70
 spin_speed = 360.0
 
 [node name="Area2D" type="Area2D" parent="."]
