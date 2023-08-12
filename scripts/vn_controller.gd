@@ -20,7 +20,7 @@ func next():
 			get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func new_text(text):
-	var label = find_child('Label') as Label
+	var label = find_child('RichTextLabel') as RichTextLabel
 	label.text = text
 
 func set_sprite(sprite):
