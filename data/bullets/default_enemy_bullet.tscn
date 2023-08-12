@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://doedj3fbb1ahs"]
+[gd_scene load_steps=5 format=3 uid="uid://doedj3fbb1ahs"]
 
 [ext_resource type="Texture2D" uid="uid://cjpatpsj4dpxu" path="res://assets/sprites/Missile1.png" id="1_2gfhe"]
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="2_ao41s"]
+[ext_resource type="Script" path="res://scripts/movement.gd" id="3_ojjr0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gso2y"]
 radius = 5.0
@@ -10,12 +11,15 @@ radius = 5.0
 z_index = 500
 texture = ExtResource("1_2gfhe")
 script = ExtResource("2_ao41s")
-speed = 70
-spin_speed = 360.0
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_gso2y")
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("3_ojjr0")
+movement_pattern = 1
+movement_speed = 75
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

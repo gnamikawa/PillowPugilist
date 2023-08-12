@@ -16,10 +16,10 @@ func shoot(delta_time: float, bullet_parent, direction = Vector2(0, 1), position
 		timer = 0
 
 		var bullet = bullet_scene.instantiate() as Bullet;
-		if overwrite_position:
-			bullet.position = position
+		bullet.set_up(position, direction)
 		bullet.player_spawned = player_spawned
-		bullet.direction = direction
+		if player_spawned:
+			bullet.name = 'player_bullet'
 		# Adds the bullet to the scene tree
 		# (necessary as otherwise it won't render!)
 		bullet_parent.add_child(bullet)

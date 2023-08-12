@@ -2,24 +2,14 @@ class_name Enemy
 
 extends CharacterBody2D
 
-@export var movement_pattern: MovementPattern = MovementPattern.LINE
-@export var speed = 50
 @export var health = 3
 @export var score_gained = 100
-@export var movement_frequency = 0.1 # For periodic and radial functions
-@export var movement_amplitude = 10 # For periodic and radial functions
+var movement = null;
 
-enum MovementPattern { 
-	LINE,
-	SINUSOIDAL,
-}
-
-var travel_time = 0
-var starting_position = 0
-var direction = Vector2(0, 1)
-
-func _enter_tree():
-	starting_position = position
+func find_movement_if_exists():
+	for c in get_children():
+		if c is Movement:
+			movement = c
 
 func damage(dmg):
 	health -= dmg
@@ -28,11 +18,13 @@ func damage(dmg):
 		score.total_score += score_gained
 		queue_free()
 
-func perpendicular(vector_in: Vector2):
-	return Vector2(vector_in.y, -vector_in.x)
+func set_up(p_position: Vector2, p_direction: Vector2):
+	find_movement_if_exists()
+	position = p_position
+	if movement:
+		movement.direction = p_direction.normalized()
 
 func _physics_process(delta):
-	travel_time += delta
 	for c in get_children():
 		if c is Weapon:
 			c.shoot(
@@ -42,11 +34,3 @@ func _physics_process(delta):
 				position,
 				true
 			)
-	
-	match movement_pattern:
-		MovementPattern.LINE:
-			position += direction * speed * delta
-		MovementPattern.SINUSOIDAL:
-			var t = speed * travel_time
-			var sinus = sin(t * movement_frequency)
-			position = starting_position + t * direction + movement_amplitude * perpendicular(direction) * sinus

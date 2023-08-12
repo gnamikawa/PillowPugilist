@@ -4,24 +4,22 @@ extends Sprite2D
 
 enum BulletType {LINEAR, SINUSOIDAL, ARC}
 @export var player_spawned = false
-@export var speed = 300
 @export var bullet_type = BulletType.LINEAR
-@export var spin_speed: float # Degrees per second
 @export var damage = 1
-var origin_point
-var direction = Vector2(0, -1)
+var movement = null;
 
-func _ready():
-	origin_point = position
+func find_movement_if_exists():
+	if movement == null:
+		for c in get_children():
+			if c is Movement:
+				movement = c
 
-func _process(delta):
-	if spin_speed > 0:
-		rotate(spin_speed / 180 * PI * delta)
-	match bullet_type:
-		BulletType.LINEAR:
-			position += direction * delta * speed
-		# TODO: IMPLEMENT OTHER SHOOTING TYPES (at least sinusoidal cuz its fun!)
-	pass
+func set_up(p_position: Vector2, p_direction: Vector2):
+	find_movement_if_exists()
+	position = p_position
+	if movement:
+		print(p_direction)
+		movement.direction = p_direction.normalized()
 
 func _on_area_2d_body_entered(body):
 	if body.is_in_group('walls'):

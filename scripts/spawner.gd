@@ -20,8 +20,7 @@ func _process(delta):
 			spawn_timer = 0
 
 			var enemy = enemy_scenes.instantiate() as Enemy
-			enemy.position = position
-			enemy.direction = direction.normalized()
+			enemy.set_up(position, direction)
 			get_parent().get_parent().add_child(enemy)
 
 			# Remove itself after spawning finishes...
