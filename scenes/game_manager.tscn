@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://behsc7nbuvu2g"]
+[gd_scene load_steps=11 format=3 uid="uid://behsc7nbuvu2g"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ff2bm"]
 [ext_resource type="PackedScene" uid="uid://wss1yuqy0vg2" path="res://scenes/player_body.tscn" id="2_1cg6l"]
 [ext_resource type="PackedScene" uid="uid://btj7uqo5vmyou" path="res://scenes/world_boundary.tscn" id="3_kyhf4"]
+[ext_resource type="Script" path="res://scripts/waves.gd" id="5_hkvtk"]
 [ext_resource type="Script" path="res://scripts/background_scroller.gd" id="5_ovqoh"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="6_klqis"]
+[ext_resource type="PackedScene" uid="uid://cal25u8or433y" path="res://data/enemies/default_enemy.tscn" id="7_uu7mh"]
 
 [sub_resource type="Gradient" id="Gradient_nnmxs"]
 
@@ -37,5 +40,19 @@ script = ExtResource("5_ovqoh")
 [node name="PlayerBody" parent="." instance=ExtResource("2_1cg6l")]
 position = Vector2(133, 420)
 motion_mode = 1
+angle_spread = 0.6
 speed = 150
 slow_speed = 75
+
+[node name="WavesHolder" type="Node" parent="."]
+
+[node name="Waves" type="Node" parent="WavesHolder"]
+script = ExtResource("5_hkvtk")
+dumpNode = NodePath("../WavesDump")
+
+[node name="Spawner" type="Node2D" parent="WavesHolder/Waves"]
+position = Vector2(116, 130)
+script = ExtResource("6_klqis")
+enemy_scenes = ExtResource("7_uu7mh")
+
+[node name="WavesDump" type="Node" parent="WavesHolder"]

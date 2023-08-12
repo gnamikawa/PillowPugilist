@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://kq1u33l7erxp"]
+
+[ext_resource type="PackedScene" uid="uid://doedj3fbb1ahs" path="res://data/bullets/default_enemy_bullet.tscn" id="1_7xufx"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="2_vyqcr"]
+
+[resource]
+script = ExtResource("2_vyqcr")
+shots_per_minute = 120.0
+name = "default weapon"
+bullet_scene = ExtResource("1_7xufx")

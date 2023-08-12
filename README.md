@@ -1,7 +1,6 @@
 # PillowPugilist
 Gamiest of gamejams
 
-
 TODO:
 
 A) Essential
@@ -13,3 +12,4 @@ B) Secondary
 -- add scoring
 -- add VN elements
 -- add main menu
+-- sounds for deaths and sounds for shooting

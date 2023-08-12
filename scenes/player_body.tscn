@@ -51,6 +51,7 @@ current_weapon = ExtResource("2_p3ko0")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1000
 sprite_frames = SubResource("SpriteFrames_12blw")
+frame_progress = 0.314563
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1100

@@ -5,6 +5,6 @@
 
 [resource]
 script = ExtResource("1_6flij")
-shots_per_minute = 540.0
+shots_per_minute = 360.0
 name = "default weapon"
 bullet_scene = ExtResource("1_7i38l")
