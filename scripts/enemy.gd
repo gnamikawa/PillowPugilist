@@ -31,6 +31,4 @@ func _physics_process(delta):
 	
 	match movement_pattern:
 		MovementPattern.DOWN:
-			print(speed)
-			print(delta)
 			position.y += speed * delta

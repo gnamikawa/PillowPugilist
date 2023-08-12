@@ -46,9 +46,6 @@ radius = 7.5
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_n5s3n")
-movement_pattern = null
-speed = null
-health = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 250
