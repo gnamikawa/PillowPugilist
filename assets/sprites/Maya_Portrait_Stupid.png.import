@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctdely0hamtbo"
-path="res://.godot/imported/Maya_Portrait5.png-28a758ccfdccea9796fc132edd7bd77d.ctex"
+uid="uid://kxwwiodal745"
+path="res://.godot/imported/Maya_Portrait_Stupid.png-8899ee16e633af3f7aa3ced9091ca545.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Maya_Portrait5.png"
-dest_files=["res://.godot/imported/Maya_Portrait5.png-28a758ccfdccea9796fc132edd7bd77d.ctex"]
+source_file="res://assets/sprites/Maya_Portrait_Stupid.png"
+dest_files=["res://.godot/imported/Maya_Portrait_Stupid.png-8899ee16e633af3f7aa3ced9091ca545.ctex"]
 
 [params]
 

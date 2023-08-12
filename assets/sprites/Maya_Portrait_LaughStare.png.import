@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kfoo0c4qbbt"
-path="res://.godot/imported/Maya_Portrait12.png-db667582194b707844adfd3d5388cc08.ctex"
+uid="uid://dvmtgukdjvb6c"
+path="res://.godot/imported/Maya_Portrait_LaughStare.png-e5e2826e48123c4758e1255128193a7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Maya_Portrait12.png"
-dest_files=["res://.godot/imported/Maya_Portrait12.png-db667582194b707844adfd3d5388cc08.ctex"]
+source_file="res://assets/sprites/Maya_Portrait_LaughStare.png"
+dest_files=["res://.godot/imported/Maya_Portrait_LaughStare.png-e5e2826e48123c4758e1255128193a7b.ctex"]
 
 [params]
 

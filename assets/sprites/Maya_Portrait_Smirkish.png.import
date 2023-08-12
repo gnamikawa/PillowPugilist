@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvds3gv3ecfnf"
-path="res://.godot/imported/Maya_Portrait10.png-55644edc41b38634319416d411023be7.ctex"
+uid="uid://ctdely0hamtbo"
+path="res://.godot/imported/Maya_Portrait_Smirkish.png-2fd1b7a6eb607bae9949ecebab1b92dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Maya_Portrait10.png"
-dest_files=["res://.godot/imported/Maya_Portrait10.png-55644edc41b38634319416d411023be7.ctex"]
+source_file="res://assets/sprites/Maya_Portrait_Smirkish.png"
+dest_files=["res://.godot/imported/Maya_Portrait_Smirkish.png-2fd1b7a6eb607bae9949ecebab1b92dd.ctex"]
 
 [params]
 

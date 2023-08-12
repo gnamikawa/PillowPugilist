@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kxwwiodal745"
-path="res://.godot/imported/Maya_Portrait15.png-bfd8d65fc47c06939fb0a900287ab50f.ctex"
+uid="uid://cgu1dladobhlg"
+path="res://.godot/imported/Maya_Portrait_WOOT.png-7b28fe7e041f350daee62321578723a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Maya_Portrait15.png"
-dest_files=["res://.godot/imported/Maya_Portrait15.png-bfd8d65fc47c06939fb0a900287ab50f.ctex"]
+source_file="res://assets/sprites/Maya_Portrait_WOOT.png"
+dest_files=["res://.godot/imported/Maya_Portrait_WOOT.png-7b28fe7e041f350daee62321578723a1.ctex"]
 
 [params]
 
