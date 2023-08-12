@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://behsc7nbuvu2g"]
+[gd_scene load_steps=13 format=3 uid="uid://behsc7nbuvu2g"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ff2bm"]
 [ext_resource type="PackedScene" uid="uid://wss1yuqy0vg2" path="res://scenes/player_body.tscn" id="2_1cg6l"]
+[ext_resource type="PackedScene" uid="uid://b5e2syrx2o1f5" path="res://scenes/ui.tscn" id="2_s760p"]
 [ext_resource type="PackedScene" uid="uid://btj7uqo5vmyou" path="res://scenes/world_boundary_enemy.tscn" id="3_kyhf4"]
 [ext_resource type="PackedScene" uid="uid://cm2lbef0eel8f" path="res://scenes/world_boundary.tscn" id="3_sc6fp"]
 [ext_resource type="Script" path="res://scripts/waves.gd" id="5_hkvtk"]
@@ -23,6 +24,13 @@ noise = SubResource("FastNoiseLite_duf76")
 [node name="GameManager" type="Node2D"]
 position = Vector2(0, 1)
 script = ExtResource("1_ff2bm")
+
+[node name="UI" parent="." instance=ExtResource("2_s760p")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="WorldBoundary" parent="." instance=ExtResource("3_kyhf4")]
 

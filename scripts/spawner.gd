@@ -7,11 +7,13 @@ var spawning = false
 @export var enemy_spawn_times = 0
 @export var spawn_cooldown = 0
 @export var amount_to_spawn = 1
+@export var direction = Vector2(0, 1)
 
 func _process(delta):
 	if spawning:
 		var enemy = enemy_scenes.instantiate() as Enemy
 		enemy.position = position
+		enemy.direction = direction.normalized()
 		get_parent().get_parent().add_child(enemy)
 
 		# Remove itself after spawning finishes...
