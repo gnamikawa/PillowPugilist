@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @export var health = 3
 @export var score_gained = 100
+@export var next_level: PackedScene
 var movement = null;
 
 func _ready():
@@ -13,6 +14,10 @@ func find_movement_if_exists():
 	for c in get_children():
 		if c is Movement:
 			movement = c
+
+func _exit_tree():
+	if next_level:
+		get_tree().change_scene_to_packed(next_level)
 
 func damage(dmg):
 	health -= dmg

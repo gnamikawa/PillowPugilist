@@ -15,7 +15,8 @@ func next(delta, node2D: Node2D):
 		var distance = dir.length();
 		node2D.position = node2D.position.lerp(position, clamp(speed * (timer - wait) / distance, 0, 1))
 		if distance < 0.01:
-			if next_weapon:
+			if next_weapon != null:
+				print('next boss weapon!')
 				var boss = get_parent().get_parent()
 				for c in boss.get_children():
 					if c is Weapon:

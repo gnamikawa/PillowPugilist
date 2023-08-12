@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdhwjqkqpo3bu"]
+
+[ext_resource type="Texture2D" uid="uid://chnu7d5shmkfe" path="res://assets/sprites/DeathScreen.png" id="1_wrnme"]
+[ext_resource type="Script" path="res://scripts/death_button.gd" id="2_c00id"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(999, 999)
+texture = ExtResource("1_wrnme")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 297.0
+offset_right = 186.0
+offset_bottom = 328.0
+text = "Main Menu"
+script = ExtResource("2_c00id")
+
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(160, 160)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -77.0
+offset_top = -118.0
+offset_right = 83.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You lost, your soul if forever destined to wander the pillowy dreamlands alone :<"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

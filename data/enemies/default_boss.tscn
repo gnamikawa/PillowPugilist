@@ -58,7 +58,6 @@ sprite_frames = SubResource("SpriteFrames_7jlwb")
 shape = SubResource("CircleShape2D_bsaby")
 
 [node name="Weapon" parent="." instance=ExtResource("3_gfy48")]
-shots_per_minute = 2400.0
 pattern_value = 5
 
 [node name="Movement" type="Node" parent="."]

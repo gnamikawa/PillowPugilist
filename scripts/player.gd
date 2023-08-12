@@ -13,6 +13,11 @@ func get_speed():
 	else:
 		return speed
 
+func _exit_tree():
+	print('played dead :skull:')
+	var ds = DeathScreen.new()
+	get_parent().add_child.call_deferred(ds)
+
 # Writes the velocity vector on the CharacterBody2D
 func get_input():
 	var input_direction = Input.get_vector(

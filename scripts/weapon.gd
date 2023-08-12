@@ -6,6 +6,7 @@ enum SpawnPattern {
 	LINE,
 	RANDOM,
 	CIRCLE,
+	AIM_AT_PLAYER_SPAWNER
 }
 
 @export var spawn_pattern = SpawnPattern.LINE;
