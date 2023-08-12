@@ -5,5 +5,8 @@
 
 [node name="GameManager" instance=ExtResource("1_sg22g")]
 
+[node name="AudioListener2D" parent="PlayerBody" index="4"]
+current = false
+
 [node name="Spawner3" type="Node2D" parent="WavesHolder/Waves" index="2"]
 script = ExtResource("2_8e330")
