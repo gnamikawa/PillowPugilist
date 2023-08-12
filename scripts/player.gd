@@ -5,7 +5,6 @@ extends CharacterBody2D
 @export var angle_spread = 0.6 # Modifies how wide the angle is during shooting while moving diagonally or horizontally
 @export var speed = 300
 @export var slow_speed = 100 
-@export var current_weapon: Weapon = load('res://data/weapons/default_weapon.tres')
 
 # Returns the speed in pixels per second
 func get_speed():
@@ -30,14 +29,16 @@ func _ready():
 func _process(delta):
 	if Input.is_key_pressed(KEY_SPACE):
 		# Spawn the bullet
-		current_weapon.shoot(
-			delta,
-			get_parent(),
-			Vector2(sign(velocity.x) * angle_spread, -1).normalized(),
-			position,
-			true,
-			true
-		)
+		for c in get_children():
+			if c is Weapon:
+				c.shoot(
+					delta,
+					get_parent(),
+					Vector2(sign(velocity.x) * angle_spread, -1).normalized(),
+					position,
+					true,
+					true
+				)
 
 func _physics_process(delta):
 	get_input()

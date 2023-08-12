@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://cal25u8or433y"]
+[gd_scene load_steps=11 format=3 uid="uid://cal25u8or433y"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_n5s3n"]
 [ext_resource type="Texture2D" uid="uid://b4bgewmyq3f81" path="res://assets/sprites/EnemyPillow.png" id="2_ql4lp"]
-[ext_resource type="Resource" uid="uid://bcgkjhk7ekmq5" path="res://data/weapons/default_weapon.tres" id="2_wtorb"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="3_4bqf4"]
+[ext_resource type="PackedScene" uid="uid://doedj3fbb1ahs" path="res://data/bullets/default_enemy_bullet.tscn" id="4_i0bcx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewjyx"]
 atlas = ExtResource("2_ql4lp")
@@ -45,7 +46,6 @@ radius = 7.5
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_n5s3n")
-current_weapon = ExtResource("2_wtorb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 250
@@ -53,3 +53,8 @@ sprite_frames = SubResource("SpriteFrames_7jlwb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bsaby")
+
+[node name="Weapon" type="Node" parent="."]
+script = ExtResource("3_4bqf4")
+shots_per_minute = 120.0
+bullet_scene = ExtResource("4_i0bcx")
