@@ -20,6 +20,5 @@ shape = SubResource("CircleShape2D_gso2y")
 [node name="Movement" type="Node" parent="."]
 script = ExtResource("3_ojjr0")
 movement_pattern = 1
-movement_speed = 75
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

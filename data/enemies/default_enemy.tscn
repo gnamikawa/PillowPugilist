@@ -63,3 +63,4 @@ bullet_scene = ExtResource("4_i0bcx")
 [node name="Movement" type="Node" parent="."]
 script = ExtResource("5_joqvw")
 movement_pattern = 1
+movement_speed = 25

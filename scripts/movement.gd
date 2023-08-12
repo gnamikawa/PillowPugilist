@@ -14,6 +14,7 @@ func perpendicular(vector_in: Vector2):
 @export var movement_frequency = 0.1 # For periodic and radial functions
 @export var movement_amplitude = 10 # For periodic and radial functions
 @export var movement_speed = 50
+@export var movement_acceleration = 0
 @export var spin_speed = 0 # Degrees per second
 var travel_time = 0
 var starting_position = 0
@@ -28,7 +29,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	travel_time += delta
-
+	movement_speed += movement_acceleration * delta
 	match movement_pattern:
 		MovementPattern.LINE:
 			parent.position += direction * movement_speed * delta
