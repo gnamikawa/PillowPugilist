@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dji0vu4e0xoqh"]
+[gd_scene load_steps=5 format=3 uid="uid://dji0vu4e0xoqh"]
 
 [ext_resource type="PackedScene" uid="uid://behsc7nbuvu2g" path="res://scenes/game_manager.tscn" id="1_sg22g"]
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="2_8e330"]
 [ext_resource type="PackedScene" uid="uid://doedj3fbb1ahs" path="res://data/bullets/default_enemy_bullet.tscn" id="4_3plgw"]
+[ext_resource type="PackedScene" uid="uid://bts6shl4lsmj5" path="res://data/enemies/default_boss.tscn" id="4_rwi42"]
 
 [node name="GameManager" instance=ExtResource("1_sg22g")]
 
@@ -12,3 +13,8 @@ current = false
 [node name="Spawner" type="Node2D" parent="WavesHolder/Waves" index="0"]
 script = ExtResource("2_8e330")
 enemy_scenes = ExtResource("4_3plgw")
+
+[node name="Spawner2" type="Node2D" parent="WavesHolder/Waves" index="1"]
+position = Vector2(130, 1)
+script = ExtResource("2_8e330")
+enemy_scenes = ExtResource("4_rwi42")

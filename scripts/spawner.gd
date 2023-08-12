@@ -19,9 +19,15 @@ func _process(delta):
 		if spawn_timer >= spawn_cooldown:
 			spawn_timer = 0
 
-			var enemy = enemy_scenes.instantiate() as Enemy
-			enemy.set_up(position, direction)
-			get_parent().get_parent().add_child(enemy)
+			var obj = enemy_scenes.instantiate();
+			if obj is Enemy:
+				var enemy = obj as Enemy
+				enemy.set_up(position, direction)
+				get_parent().get_parent().add_child(enemy)
+			elif obj is Bullet:
+				var bullet = obj as Bullet
+				bullet.set_up(position, direction)
+				get_parent().get_parent().add_child(bullet)
 
 			# Remove itself after spawning finishes...
 			amount_to_spawn -= 1
