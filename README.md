@@ -1,6 +1,13 @@
 # PillowPugilist
 Gamiest of gamejams
 
+
+# Bullet workflow
+-- copy a bullet scene
+-- change the sprite
+-- change the collision radius
+-- change the damage
+
 TODO:
 
 A) Essential

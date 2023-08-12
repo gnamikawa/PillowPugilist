@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d0rxrdc8ft3gr"]
 
-[ext_resource type="Texture2D" uid="uid://jbggvtxse2f2" path="res://assets/sprites/EnemyPillow_Nature.png" id="1_npja5"]
+[ext_resource type="Texture2D" uid="uid://cjpatpsj4dpxu" path="res://assets/sprites/Missile1.png" id="1_i2hkv"]
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="2_t5s8w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gso2y"]
@@ -8,7 +8,7 @@ radius = 5.0
 
 [node name="Bullet" type="Sprite2D"]
 z_index = 500
-texture = ExtResource("1_npja5")
+texture = ExtResource("1_i2hkv")
 script = ExtResource("2_t5s8w")
 spin_speed = 360.0
 

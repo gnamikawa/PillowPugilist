@@ -7,6 +7,7 @@ enum BulletType {LINEAR, SINUSOIDAL, ARC}
 @export var speed = 300
 @export var bullet_type = BulletType.LINEAR
 @export var spin_speed: float # Degrees per second
+@export var damage = 1
 var origin_point
 var direction = Vector2(0, -1)
 

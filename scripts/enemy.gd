@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @export var movement_pattern: MovementPattern = MovementPattern.DOWN
 @export var speed = 25
+@export var health = 3
 
 enum MovementPattern { 
 	DOWN
