@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://behsc7nbuvu2g"]
+[gd_scene load_steps=11 format=3 uid="uid://behsc7nbuvu2g"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_ff2bm"]
 [ext_resource type="PackedScene" uid="uid://wss1yuqy0vg2" path="res://scenes/player_body.tscn" id="2_1cg6l"]
@@ -7,19 +7,17 @@
 [ext_resource type="PackedScene" uid="uid://cm2lbef0eel8f" path="res://scenes/world_boundary.tscn" id="3_sc6fp"]
 [ext_resource type="Script" path="res://scripts/waves.gd" id="5_hkvtk"]
 [ext_resource type="Script" path="res://scripts/background_scroller.gd" id="5_ovqoh"]
-[ext_resource type="Script" path="res://scripts/spawner.gd" id="6_klqis"]
-[ext_resource type="PackedScene" uid="uid://cal25u8or433y" path="res://data/enemies/default_enemy.tscn" id="7_uu7mh"]
 
-[sub_resource type="Gradient" id="Gradient_nnmxs"]
+[sub_resource type="Gradient" id="Gradient_mu15n"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_duf76"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_r3r84"]
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fi45a"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ujpry"]
 width = 270
 height = 480
 seamless = true
-color_ramp = SubResource("Gradient_nnmxs")
-noise = SubResource("FastNoiseLite_duf76")
+color_ramp = SubResource("Gradient_mu15n")
+noise = SubResource("FastNoiseLite_r3r84")
 
 [node name="GameManager" type="Node2D"]
 position = Vector2(0, 1)
@@ -38,14 +36,14 @@ grow_vertical = 1
 
 [node name="Background" type="Node" parent="."]
 
-[node name="BackgroundScroller1" type="Sprite2D" parent="Background"]
+[node name="BackgroundScroller3" type="Sprite2D" parent="Background"]
 position = Vector2(135, 240)
-texture = SubResource("NoiseTexture2D_fi45a")
+texture = SubResource("NoiseTexture2D_ujpry")
 script = ExtResource("5_ovqoh")
 
-[node name="BackgroundScroller2" type="Sprite2D" parent="Background"]
+[node name="BackgroundScroller4" type="Sprite2D" parent="Background"]
 position = Vector2(135, -240)
-texture = SubResource("NoiseTexture2D_fi45a")
+texture = SubResource("NoiseTexture2D_ujpry")
 script = ExtResource("5_ovqoh")
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_1cg6l")]
@@ -62,23 +60,5 @@ current = true
 [node name="Waves" type="Node" parent="WavesHolder"]
 script = ExtResource("5_hkvtk")
 dumpNode = NodePath("../WavesDump")
-
-[node name="Spawner" type="Node2D" parent="WavesHolder/Waves"]
-position = Vector2(-9, -6)
-script = ExtResource("6_klqis")
-enemy_scenes = ExtResource("7_uu7mh")
-enemy_spawn_times = 1
-spawn_cooldown = 1
-amount_to_spawn = 15
-direction = Vector2(0.4, 1)
-
-[node name="Spawner2" type="Node2D" parent="WavesHolder/Waves"]
-position = Vector2(276, -9)
-script = ExtResource("6_klqis")
-enemy_scenes = ExtResource("7_uu7mh")
-enemy_spawn_times = 1
-spawn_cooldown = 1
-amount_to_spawn = 15
-direction = Vector2(-0.4, 1)
 
 [node name="WavesDump" type="Node" parent="WavesHolder"]
