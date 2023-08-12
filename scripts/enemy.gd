@@ -2,10 +2,11 @@ class_name Enemy
 
 extends CharacterBody2D
 
-@export var movement_pattern: MovementPattern
+@export var movement_pattern: MovementPattern = MovementPattern.DOWN
+@export var speed = 25
 
 enum MovementPattern { 
-	SIDEWAYS
+	DOWN
 }
 
 func _physics_process(delta):
@@ -18,3 +19,7 @@ func _physics_process(delta):
 				position,
 				true
 			)
+	
+	match movement_pattern:
+		MovementPattern.DOWN:
+			position.y += speed * delta
