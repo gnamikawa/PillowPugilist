@@ -1,4 +1,4 @@
 extends Button
 
 func _on_pressed():
-	get_tree().change_scene_to_file("res://scenes/vn.tscn")
+	get_tree().change_scene_to_file("res://scenes/vn/lore_dump.tscn")

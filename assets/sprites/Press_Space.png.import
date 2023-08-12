@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brysmcghg6ye8"
-; uid="uid://02htjys13k7g"
-path="res://.godot/imported/Press_Space.png-8ce3807ee38abc35bc27dde33403c5c8.ctex"
+uid="uid://botfg214ximxp"
+path="res://.godot/imported/Press_Space.png-c497292069c5e01824f6e4bc4d9f28de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/source_files/Press_Space.png"
-dest_files=["res://.godot/imported/Press_Space.png-8ce3807ee38abc35bc27dde33403c5c8.ctex"]
+source_file="res://assets/sprites/Press_Space.png"
+dest_files=["res://.godot/imported/Press_Space.png-c497292069c5e01824f6e4bc4d9f28de.ctex"]
 
 [params]
 

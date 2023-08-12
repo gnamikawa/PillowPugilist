@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brysmcghg6ye8"
-; uid="uid://02htjys13k7g"
-path="res://.godot/imported/Press_Space.png-8ce3807ee38abc35bc27dde33403c5c8.ctex"
+uid="uid://d26233ra5k6u6"
+path="res://.godot/imported/Maya_Portrait_Yuhyoh.png-812c7c25a25373fd6d36fc80aaa34ba3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/source_files/Press_Space.png"
-dest_files=["res://.godot/imported/Press_Space.png-8ce3807ee38abc35bc27dde33403c5c8.ctex"]
+source_file="res://assets/sprites/Maya_Portrait_Yuhyoh.png"
+dest_files=["res://.godot/imported/Maya_Portrait_Yuhyoh.png-812c7c25a25373fd6d36fc80aaa34ba3.ctex"]
 
 [params]
 

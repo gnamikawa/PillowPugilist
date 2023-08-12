@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://wedf0wkotavp"]
+[gd_scene load_steps=3 format=3 uid="uid://wedf0wkotavp"]
 
 [ext_resource type="Script" path="res://scripts/vn_controller.gd" id="1_s6g6g"]
-[ext_resource type="Script" path="res://scripts/vn_say_action.gd" id="2_pmpvo"]
 [ext_resource type="PackedScene" uid="uid://dji0vu4e0xoqh" path="res://scenes/levels/level_one.tscn" id="2_py4cc"]
-[ext_resource type="Texture2D" uid="uid://cvds3gv3ecfnf" path="res://assets/sprites/Maya_Portrait_Pain.png" id="4_15lbm"]
 
 [node name="VN" type="Control"]
 layout_mode = 3
@@ -15,12 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_s6g6g")
 next_scene = ExtResource("2_py4cc")
 
-[node name="Actions" type="Node" parent="."]
-
-[node name="Node" type="Node" parent="Actions"]
-script = ExtResource("2_pmpvo")
-sprite = ExtResource("4_15lbm")
-text = "This is a story of a young girl named Maya."
+[node name="VN_NodeTree" type="Node" parent="."]
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(130, 214)
@@ -47,6 +40,7 @@ offset_top = -184.0
 offset_bottom = -34.0
 grow_horizontal = 2
 grow_vertical = 0
+bbcode_enabled = true
 text = "<placeholder>"
 
 [connection signal="pressed" from="ButtonNext" to="." method="_on_button_next_pressed"]

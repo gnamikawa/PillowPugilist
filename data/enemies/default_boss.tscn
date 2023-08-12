@@ -1,11 +1,11 @@
 [gd_scene load_steps=13 format=3 uid="uid://bts6shl4lsmj5"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_eweod"]
-[ext_resource type="Texture2D" uid="uid://b4bgewmyq3f81" path="res://assets/sprites/EnemyPillow.png" id="2_pv6gn"]
+[ext_resource type="Texture2D" uid="uid://dj4luvyx36srv" path="res://assets/sprites/EnemyPillow.png" id="2_pv6gn"]
 [ext_resource type="PackedScene" uid="uid://ccvuabd1cinyl" path="res://data/weapons/weapon.tscn" id="3_gfy48"]
 [ext_resource type="Script" path="res://scripts/boss_controller.gd" id="5_q0whv"]
 [ext_resource type="Script" path="res://scripts/boss_movement.gd" id="5_x1iqc"]
-[ext_resource type="PackedScene" uid="uid://b0sxaa6rqtk2" path="res://data/weapons/aim_weapon.tscn" id="6_itod2"]
+[ext_resource type="PackedScene" path="res://data/weapons/aim_weapon.tscn" id="6_itod2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewjyx"]
 atlas = ExtResource("2_pv6gn")

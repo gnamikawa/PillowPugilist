@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://chrtnkn8cek4l"]
+
+[ext_resource type="PackedScene" uid="uid://doedj3fbb1ahs" path="res://data/bullets/default_enemy_bullet.tscn" id="1_jkk2f"]
+[ext_resource type="Texture2D" uid="uid://but4kybn78r40" path="res://assets/sprites/Missile2.png" id="2_ygxrj"]
+
+[node name="Bullet" instance=ExtResource("1_jkk2f")]
+texture = ExtResource("2_ygxrj")
+
+[node name="Movement" parent="." index="1"]
+spin_speed = 5

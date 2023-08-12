@@ -2,17 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brysmcghg6ye8"
-; uid="uid://02htjys13k7g"
-path="res://.godot/imported/Press_Space.png-8ce3807ee38abc35bc27dde33403c5c8.ctex"
+uid="uid://dcwb32f735iqp"
+path="res://.godot/imported/Maya_Portrait_Madness.png-68b4ee11d83cb654d9c4ae87be8f11e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/source_files/Press_Space.png"
-dest_files=["res://.godot/imported/Press_Space.png-8ce3807ee38abc35bc27dde33403c5c8.ctex"]
+source_file="res://assets/sprites/Maya_Portrait_Madness.png"
+dest_files=["res://.godot/imported/Maya_Portrait_Madness.png-68b4ee11d83cb654d9c4ae87be8f11e6.ctex"]
 
 [params]
 

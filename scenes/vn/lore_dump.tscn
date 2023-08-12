@@ -1,0 +1,74 @@
+[gd_scene load_steps=13 format=3 uid="uid://vyavhkk5tdti"]
+
+[ext_resource type="PackedScene" uid="uid://wedf0wkotavp" path="res://scenes/vn.tscn" id="1_uo2it"]
+[ext_resource type="Script" path="res://scripts/vn_say_action.gd" id="2_8yuaq"]
+[ext_resource type="Texture2D" uid="uid://ll8i7c7x3slb" path="res://assets/sprites/Maya_Portrait_LMAO.png" id="3_gwl1s"]
+[ext_resource type="Texture2D" uid="uid://co7tfwdnd7n74" path="res://assets/sprites/Lumina_Happy.png" id="4_4vuel"]
+[ext_resource type="Texture2D" uid="uid://d386crjl58t0m" path="res://assets/sprites/Maya_Portrait_Disgust.png" id="5_2o6f4"]
+[ext_resource type="Texture2D" uid="uid://c5ht46tbb1fev" path="res://assets/sprites/Maya_Portrait_Enraged.png" id="6_jbp1m"]
+[ext_resource type="Texture2D" uid="uid://dj4luvyx36srv" path="res://assets/sprites/EnemyPillow.png" id="7_w7406"]
+[ext_resource type="Texture2D" uid="uid://b5p2ibu3d12na" path="res://assets/sprites/Maya_Portrait_Devastation.png" id="8_mt7in"]
+[ext_resource type="Texture2D" uid="uid://dub7gx08nkcju" path="res://assets/sprites/Lumina_Rekt.png" id="9_gd0d8"]
+[ext_resource type="Texture2D" uid="uid://kfoo0c4qbbt" path="res://assets/sprites/Maya_Portrait_PaPaPa.png" id="10_cct3s"]
+[ext_resource type="Texture2D" uid="uid://xvvulavcpcup" path="res://assets/sprites/Maya_Portrait_Livid.png" id="10_sojdk"]
+[ext_resource type="Texture2D" uid="uid://bjkyajqoaypao" path="res://assets/sprites/Shard.png" id="11_gcsj5"]
+
+[node name="VN" instance=ExtResource("1_uo2it")]
+
+[node name="VNSay" type="Node" parent="VN_NodeTree" index="0"]
+script = ExtResource("2_8yuaq")
+sprite = ExtResource("3_gwl1s")
+text = "Maya: C'mere Lumina!"
+
+[node name="VNSay2" type="Node" parent="VN_NodeTree" index="1"]
+script = ExtResource("2_8yuaq")
+text = "Maya: You're always such a bundle of joy!"
+
+[node name="VNSay3" type="Node" parent="VN_NodeTree" index="2"]
+script = ExtResource("2_8yuaq")
+sprite = ExtResource("4_4vuel")
+text = "Lumina: Squeak squeak!"
+
+[node name="VNSay4" type="Node" parent="VN_NodeTree" index="3"]
+script = ExtResource("2_8yuaq")
+sprite = ExtResource("5_2o6f4")
+text = "Maya: Who is that?"
+
+[node name="VNSay5" type="Node" parent="VN_NodeTree" index="4"]
+script = ExtResource("2_8yuaq")
+sprite = ExtResource("6_jbp1m")
+text = "Maya: What business do you have here Seraphine? "
+
+[node name="VNSay6" type="Node" parent="VN_NodeTree" index="5"]
+script = ExtResource("2_8yuaq")
+sprite = ExtResource("7_w7406")
+text = "Seraphine: Just embracing change, my dear Maya."
+
+[node name="VNSay7" type="Node" parent="VN_NodeTree" index="6"]
+script = ExtResource("2_8yuaq")
+text = "**Seraphine raises her hand, and with a sinister gesture, shatters the Heart of Dreams. Chaos erupts as the garden trembles.**"
+
+[node name="VNSay8" type="Node" parent="VN_NodeTree" index="7"]
+script = ExtResource("2_8yuaq")
+sprite = ExtResource("8_mt7in")
+text = "Maya: No! What have you done?"
+
+[node name="VNSay9" type="Node" parent="VN_NodeTree" index="8"]
+script = ExtResource("2_8yuaq")
+sprite = ExtResource("9_gd0d8")
+text = "**Lumina's form flickers, and Maya rushes towards her.**"
+
+[node name="VNSay10" type="Node" parent="VN_NodeTree" index="9"]
+script = ExtResource("2_8yuaq")
+sprite = ExtResource("10_cct3s")
+text = "Lumina!"
+
+[node name="VNSay11" type="Node" parent="VN_NodeTree" index="10"]
+script = ExtResource("2_8yuaq")
+sprite = ExtResource("11_gcsj5")
+text = "**As Lumina's form fades, a shard of the Heart of Dreams remains.**"
+
+[node name="VNSay12" type="Node" parent="VN_NodeTree" index="11"]
+script = ExtResource("2_8yuaq")
+sprite = ExtResource("10_sojdk")
+text = "Maya: SERAPHINE!"
