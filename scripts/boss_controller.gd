@@ -1,3 +1,5 @@
+class_name BossController
+
 extends Node
 
 func _process(delta):

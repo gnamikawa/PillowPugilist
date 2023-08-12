@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 @export var health = 3
 @export var score_gained = 100
-@export var next_level: PackedScene
+@export var next_level: PackedScene # If not null, upon death of the enemy this level will be loaded
 var movement = null;
 
 func _ready():

@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bts6shl4lsmj5"]
+[gd_scene load_steps=13 format=3 uid="uid://bts6shl4lsmj5"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_eweod"]
 [ext_resource type="Texture2D" uid="uid://b4bgewmyq3f81" path="res://assets/sprites/EnemyPillow.png" id="2_pv6gn"]
 [ext_resource type="PackedScene" uid="uid://ccvuabd1cinyl" path="res://data/weapons/weapon.tscn" id="3_gfy48"]
 [ext_resource type="Script" path="res://scripts/boss_controller.gd" id="5_q0whv"]
 [ext_resource type="Script" path="res://scripts/boss_movement.gd" id="5_x1iqc"]
+[ext_resource type="PackedScene" uid="uid://b0sxaa6rqtk2" path="res://data/weapons/aim_weapon.tscn" id="6_itod2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewjyx"]
 atlas = ExtResource("2_pv6gn")
@@ -67,6 +68,7 @@ script = ExtResource("5_q0whv")
 position = Vector2(121, 138)
 script = ExtResource("5_x1iqc")
 wait = 0
+next_weapon = ExtResource("6_itod2")
 
 [node name="Node2D2" type="Node2D" parent="Movement"]
 position = Vector2(191, 65)
@@ -75,13 +77,16 @@ wait = 10
 next_weapon = ExtResource("3_gfy48")
 
 [node name="Node2D3" type="Node2D" parent="Movement"]
-position = Vector2(72, 72)
+position = Vector2(72, 71)
 script = ExtResource("5_x1iqc")
 
 [node name="Node2D4" type="Node2D" parent="Movement"]
 position = Vector2(202, 193)
 script = ExtResource("5_x1iqc")
+wait = 5
+next_weapon = ExtResource("6_itod2")
 
 [node name="Node2D5" type="Node2D" parent="Movement"]
 position = Vector2(68, 203)
 script = ExtResource("5_x1iqc")
+wait = 5

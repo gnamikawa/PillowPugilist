@@ -6,7 +6,7 @@ enum SpawnPattern {
 	LINE,
 	RANDOM,
 	CIRCLE,
-	AIM_AT_PLAYER_SPAWNER
+	AIM_AT_PLAYER
 }
 
 @export var spawn_pattern = SpawnPattern.LINE;
@@ -33,6 +33,10 @@ func shoot(delta_time: float, bullet_parent, direction = Vector2(0, 1), position
 				dir = Vector2(randf_range(-1, 1), randf_range(-1, 1))
 			SpawnPattern.CIRCLE:
 				dir = Vector2(sin(total_timer * pattern_value), cos(total_timer * pattern_value))
+			SpawnPattern.AIM_AT_PLAYER:
+				var n = get_tree().get_root().get_node('GameManager/PlayerBody') as Node2D
+				if n:
+					dir = n.position - position
 		bullet.set_up(position, dir)
 		bullet.player_spawned = player_spawned
 		if player_spawned:
