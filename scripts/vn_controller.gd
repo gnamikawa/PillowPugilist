@@ -8,8 +8,9 @@ func _enter_tree():
 	next()
 
 func next():
-	var nextc = get_child(0).get_child(0)
-	if nextc:
+	var has_children = get_child(0).get_child_count()
+	if has_children:
+		var nextc = get_child(0).get_child(0)
 		nextc.do()
 		nextc.queue_free()
 	else:

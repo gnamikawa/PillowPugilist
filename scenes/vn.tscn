@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://wedf0wkotavp"]
+[gd_scene load_steps=5 format=3 uid="uid://wedf0wkotavp"]
 
 [ext_resource type="Script" path="res://scripts/vn_controller.gd" id="1_s6g6g"]
 [ext_resource type="Script" path="res://scripts/vn_say_action.gd" id="2_pmpvo"]
-[ext_resource type="Texture2D" uid="uid://bnylpv6liicxx" path="res://assets/sprites/Maya_Portrait.png" id="3_mqjvu"]
+[ext_resource type="PackedScene" uid="uid://dji0vu4e0xoqh" path="res://scenes/levels/level_one.tscn" id="2_py4cc"]
+[ext_resource type="Texture2D" uid="uid://cvds3gv3ecfnf" path="res://assets/sprites/Maya_Portrait10.png" id="3_rn0xc"]
 
 [node name="VN" type="Control"]
 layout_mode = 3
@@ -12,12 +13,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s6g6g")
+next_scene = ExtResource("2_py4cc")
 
 [node name="Actions" type="Node" parent="."]
 
 [node name="Node" type="Node" parent="Actions"]
 script = ExtResource("2_pmpvo")
-sprite = ExtResource("3_mqjvu")
+sprite = ExtResource("3_rn0xc")
 text = "This is a story of a young girl named Maya."
 
 [node name="Label" type="Label" parent="."]
