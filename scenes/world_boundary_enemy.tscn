@@ -1,38 +1,46 @@
-[gd_scene load_steps=5 format=3 uid="uid://btj7uqo5vmyou"]
+[gd_scene load_steps=6 format=3 uid="uid://btj7uqo5vmyou"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wh081"]
+[ext_resource type="Script" path="res://scripts/enemy_boundary.gd" id="1_lsq1c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r3mvt"]
 normal = Vector2(1, 0)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k7axj"]
-normal = Vector2(0, 1)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_w3axx"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sl4yg"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_8mnl2"]
 normal = Vector2(-1, 0)
 
-[node name="EnemyWorldBoundary" type="Node"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hj0s3"]
+normal = Vector2(0, 1)
 
-[node name="LeftWall" type="StaticBody2D" parent="." groups=["enemy_walls", "walls"]]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xy7in"]
+
+[node name="EnemyWorldBoundary" type="Node"]
+script = ExtResource("1_lsq1c")
+
+[node name="LeftWall" type="Area2D" parent="." groups=["enemy_walls"]]
 position = Vector2(-120, 0)
 
-[node name="Collider" type="CollisionShape2D" parent="LeftWall"]
-shape = SubResource("WorldBoundaryShape2D_wh081")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+shape = SubResource("WorldBoundaryShape2D_r3mvt")
 
-[node name="TopWall" type="StaticBody2D" parent="." groups=["enemy_walls", "walls"]]
+[node name="RightWall" type="Area2D" parent="." groups=["enemy_walls"]]
+position = Vector2(389, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+shape = SubResource("WorldBoundaryShape2D_8mnl2")
+
+[node name="TopWall" type="Area2D" parent="." groups=["enemy_walls"]]
 position = Vector2(0, -120)
 
-[node name="Collider" type="CollisionShape2D" parent="TopWall"]
-shape = SubResource("WorldBoundaryShape2D_k7axj")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+shape = SubResource("WorldBoundaryShape2D_hj0s3")
 
-[node name="BottomWall" type="StaticBody2D" parent="." groups=["enemy_walls", "walls"]]
-position = Vector2(270, 600)
+[node name="BottomWall" type="Area2D" parent="." groups=["enemy_walls"]]
+position = Vector2(0, 600)
 
-[node name="Collider" type="CollisionShape2D" parent="BottomWall"]
-shape = SubResource("WorldBoundaryShape2D_w3axx")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
+shape = SubResource("WorldBoundaryShape2D_xy7in")
 
-[node name="RightWall" type="StaticBody2D" parent="." groups=["enemy_walls", "walls"]]
-position = Vector2(388, 480)
-
-[node name="Collider" type="CollisionShape2D" parent="RightWall"]
-shape = SubResource("WorldBoundaryShape2D_sl4yg")
+[connection signal="body_entered" from="LeftWall" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="RightWall" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="TopWall" to="." method="_on_body_entered"]
+[connection signal="body_entered" from="BottomWall" to="." method="_on_body_entered"]
