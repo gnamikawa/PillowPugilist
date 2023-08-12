@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_06625"]
 [ext_resource type="PackedScene" uid="uid://d0rxrdc8ft3gr" path="res://scenes/bullet.tscn" id="2_iw228"]
-[ext_resource type="Texture2D" uid="uid://e5wroq0fsgei" path="res://assets/sprites/Maya.png" id="2_rfx0n"]
+[ext_resource type="Texture2D" uid="uid://bq1xb3yac1807" path="res://assets/sprites/Maya.png" id="2_rfx0n"]
 [ext_resource type="Texture2D" uid="uid://3fny6mj7pra2" path="res://assets/sprites/Hitcenter.png" id="2_rury2"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="3_g0b80"]
 [ext_resource type="AudioStream" uid="uid://bbgts81k0p3dp" path="res://assets/sfx/Click1.wav" id="6_ww28n"]
@@ -52,7 +52,8 @@ script = ExtResource("1_06625")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1000
 sprite_frames = SubResource("SpriteFrames_12blw")
-frame_progress = 0.0656407
+frame = 3
+frame_progress = 0.853851
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 1100
