@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://dji0vu4e0xoqh"]
+
+[ext_resource type="PackedScene" uid="uid://behsc7nbuvu2g" path="res://scenes/game_manager.tscn" id="1_sg22g"]
+[ext_resource type="Script" path="res://scripts/spawner.gd" id="2_8e330"]
+
+[node name="GameManager" instance=ExtResource("1_sg22g")]
+
+[node name="Spawner3" type="Node2D" parent="WavesHolder/Waves" index="2"]
+script = ExtResource("2_8e330")
