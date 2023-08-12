@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://vyavhkk5tdti"]
+[gd_scene load_steps=14 format=3 uid="uid://vyavhkk5tdti"]
 
 [ext_resource type="PackedScene" uid="uid://wedf0wkotavp" path="res://scenes/vn.tscn" id="1_uo2it"]
 [ext_resource type="Script" path="res://scripts/vn_say_action.gd" id="2_8yuaq"]
+[ext_resource type="PackedScene" uid="uid://dji0vu4e0xoqh" path="res://scenes/levels/level_one.tscn" id="2_ckgwt"]
 [ext_resource type="Texture2D" uid="uid://ll8i7c7x3slb" path="res://assets/sprites/Maya_Portrait_LMAO.png" id="3_gwl1s"]
 [ext_resource type="Texture2D" uid="uid://co7tfwdnd7n74" path="res://assets/sprites/Lumina_Happy.png" id="4_4vuel"]
 [ext_resource type="Texture2D" uid="uid://d386crjl58t0m" path="res://assets/sprites/Maya_Portrait_Disgust.png" id="5_2o6f4"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bjkyajqoaypao" path="res://assets/sprites/Shard.png" id="11_gcsj5"]
 
 [node name="VN" instance=ExtResource("1_uo2it")]
+next_scene = ExtResource("2_ckgwt")
 
 [node name="VNSay" type="Node" parent="VN_NodeTree" index="0"]
 script = ExtResource("2_8yuaq")

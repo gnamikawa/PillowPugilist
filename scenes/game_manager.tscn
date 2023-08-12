@@ -52,9 +52,6 @@ motion_mode = 1
 speed = 150
 slow_speed = 75
 
-[node name="AudioListener2D" type="AudioListener2D" parent="PlayerBody"]
-current = true
-
 [node name="WavesHolder" type="Node" parent="."]
 
 [node name="Waves" type="Node" parent="WavesHolder"]
