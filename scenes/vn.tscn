@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://wedf0wkotavp"]
+
+[ext_resource type="Script" path="res://scripts/vn_controller.gd" id="1_s6g6g"]
+[ext_resource type="Script" path="res://scripts/vn_say_action.gd" id="2_pmpvo"]
+[ext_resource type="Texture2D" uid="uid://bnylpv6liicxx" path="res://assets/sprites/Maya_Portrait.png" id="3_mqjvu"]
+
+[node name="VN" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s6g6g")
+
+[node name="Actions" type="Node" parent="."]
+
+[node name="Node" type="Node" parent="Actions"]
+script = ExtResource("2_pmpvo")
+sprite = ExtResource("3_mqjvu")
+text = "This is a story of a young girl named Maya."
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -143.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "<placeholder>"
+autowrap_mode = 3
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(130, 214)
+
+[node name="ButtonNext" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Next"
+
+[connection signal="pressed" from="ButtonNext" to="." method="_on_button_next_pressed"]

@@ -27,7 +27,7 @@ func _ready():
 	print('player ready')
 
 func _process(delta):
-	if Input.is_key_pressed(KEY_SPACE):
+	if Input.is_key_pressed(KEY_SPACE) or true:
 		# Spawn the bullet
 		for c in get_children():
 			if c is Weapon:

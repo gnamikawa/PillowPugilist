@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/movement.gd" id="3_yqeib"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gso2y"]
-radius = 9.0
+radius = 5.0
 
 [node name="Bullet" type="Sprite2D"]
 z_index = 500
