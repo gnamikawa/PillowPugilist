@@ -2,7 +2,7 @@ class_name PlayerObject
 
 extends CharacterBody2D
 
-@export var angle_spread = 0.6 # Modifies how wide the angle is during shooting while moving diagonally or horizontally
+@export var angle_spread = 0.5 # Modifies how wide the angle is during shooting while moving diagonally or horizontally
 @export var speed = 300
 @export var slow_speed = 100 
 
