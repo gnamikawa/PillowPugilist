@@ -25,6 +25,7 @@ func get_input():
 
 func _ready():
 	print('player ready')
+	$AnimatedSprite2D.play()
 
 func _process(delta):
 	if Input.is_key_pressed(KEY_SPACE) or true:

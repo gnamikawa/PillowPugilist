@@ -6,6 +6,9 @@ extends CharacterBody2D
 @export var score_gained = 100
 var movement = null;
 
+func _ready():
+	$AnimatedSprite2D.play()
+
 func find_movement_if_exists():
 	for c in get_children():
 		if c is Movement:
