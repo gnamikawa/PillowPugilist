@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="1_mijhn"]
 [ext_resource type="PackedScene" uid="uid://b7rh67ey8k4i2" path="res://data/bullets/linearfast_enemy_bullet.tscn" id="2_b15lt"]
 
-[node name="Weapon" type="Node"]
+[node name="Weapon2" type="Node"]
 script = ExtResource("1_mijhn")
 shots_per_minute = 600.0
 bullet_scene = ExtResource("2_b15lt")
