@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfpe2qtvjtp38"]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_ixmql"]
+[ext_resource type="PackedScene" uid="uid://b7rh67ey8k4i2" path="res://data/bullets/linearfast_enemy_bullet.tscn" id="2_vdvvr"]
+
+[node name="Weapon" type="Node"]
+script = ExtResource("1_ixmql")
+spawn_pattern = 1
+shots_per_minute = 6000.0
+bullet_scene = ExtResource("2_vdvvr")
+pattern_value = 6
