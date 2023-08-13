@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://ccvuabd1cinyl"]
 
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="1_0i045"]
-[ext_resource type="PackedScene" uid="uid://doedj3fbb1ahs" path="res://data/bullets/default_enemy_bullet.tscn" id="2_r7oca"]
+[ext_resource type="PackedScene" uid="uid://doedj3fbb1ahs" path="res://data/bullets/wavy_enemy_bullet.tscn" id="2_yq8ue"]
 
 [node name="Weapon" type="Node"]
 script = ExtResource("1_0i045")
 spawn_pattern = 2
 shots_per_minute = 2400.0
-bullet_scene = ExtResource("2_r7oca")
+bullet_scene = ExtResource("2_yq8ue")
 pattern_value = 6

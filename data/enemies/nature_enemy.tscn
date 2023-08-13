@@ -1,0 +1,68 @@
+[gd_scene load_steps=12 format=3 uid="uid://bhrb78pledgci"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_51mln"]
+[ext_resource type="Texture2D" uid="uid://ba2v1s5h1j7ws" path="res://assets/sprites/EnemyPillow_Nature.png" id="2_oqjwu"]
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="3_7fjcl"]
+[ext_resource type="PackedScene" uid="uid://doedj3fbb1ahs" path="res://data/bullets/wavy_enemy_bullet.tscn" id="4_3qgwb"]
+[ext_resource type="Script" path="res://scripts/movement.gd" id="5_7v58u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r38bs"]
+atlas = ExtResource("2_oqjwu")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2k87"]
+atlas = ExtResource("2_oqjwu")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7eo3h"]
+atlas = ExtResource("2_oqjwu")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72fu3"]
+atlas = ExtResource("2_oqjwu")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqv8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r38bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2k87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7eo3h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72fu3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsaby"]
+radius = 7.5
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+script = ExtResource("1_51mln")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 250
+sprite_frames = SubResource("SpriteFrames_vqv8i")
+frame = 1
+frame_progress = 0.71254
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bsaby")
+
+[node name="Weapon" type="Node" parent="."]
+script = ExtResource("3_7fjcl")
+shots_per_minute = 120.0
+bullet_scene = ExtResource("4_3qgwb")
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("5_7v58u")
+movement_speed = 25
+spin_speed = 1

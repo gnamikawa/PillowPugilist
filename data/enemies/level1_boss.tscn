@@ -1,0 +1,158 @@
+[gd_scene load_steps=15 format=3 uid="uid://bts6shl4lsmj5"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_eweod"]
+[ext_resource type="Texture2D" uid="uid://dj4luvyx36srv" path="res://assets/sprites/EnemyPillow.png" id="2_pv6gn"]
+[ext_resource type="PackedScene" uid="uid://ccvuabd1cinyl" path="res://data/weapons/spin_weapon.tscn" id="5_742h5"]
+[ext_resource type="Script" path="res://scripts/boss_controller.gd" id="5_q0whv"]
+[ext_resource type="Script" path="res://scripts/boss_movement.gd" id="5_x1iqc"]
+[ext_resource type="PackedScene" uid="uid://cobwkmurjat6j" path="res://data/weapons/no_weapon.tscn" id="6_5ed0q"]
+[ext_resource type="PackedScene" uid="uid://evdttodblsnm" path="res://data/weapons/aim_laser_weapon.tscn" id="6_cqmes"]
+[ext_resource type="PackedScene" uid="uid://bfcj23xaqlxoj" path="res://data/weapons/sprinkler_weapon.tscn" id="6_y87q6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewjyx"]
+atlas = ExtResource("2_pv6gn")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khd66"]
+atlas = ExtResource("2_pv6gn")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjvsi"]
+atlas = ExtResource("2_pv6gn")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hgu5"]
+atlas = ExtResource("2_pv6gn")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7jlwb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewjyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khd66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjvsi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0hgu5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bsaby"]
+radius = 42.36
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("weapons_parent") groups=["enemy"]]
+script = ExtResource("1_eweod")
+health = 5000
+weapons_parent = NodePath(".")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 250
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_7jlwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bsaby")
+
+[node name="Movement" type="Node" parent="."]
+script = ExtResource("5_q0whv")
+
+[node name="Spin1" type="Node2D" parent="Movement"]
+position = Vector2(132, 70)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 2.0
+next_weapon = ExtResource("5_742h5")
+
+[node name="Wait1" type="Node2D" parent="Movement"]
+position = Vector2(132, 70)
+script = ExtResource("5_x1iqc")
+wait = 10
+speed = 1.0
+next_weapon = ExtResource("6_5ed0q")
+
+[node name="Sprinkler1" type="Node2D" parent="Movement"]
+position = Vector2(132, 234)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 2.0
+next_weapon = ExtResource("6_y87q6")
+
+[node name="Wait2" type="Node2D" parent="Movement"]
+position = Vector2(132, 234)
+script = ExtResource("5_x1iqc")
+wait = 10
+speed = 1.0
+next_weapon = ExtResource("6_5ed0q")
+
+[node name="Wait3" type="Node2D" parent="Movement"]
+position = Vector2(132, 70)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 5.0
+next_weapon = ExtResource("6_5ed0q")
+
+[node name="BackAndForth1" type="Node2D" parent="Movement"]
+position = Vector2(50, 70)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 2.0
+next_weapon = ExtResource("6_cqmes")
+
+[node name="BackAndForth2" type="Node2D" parent="Movement"]
+position = Vector2(215, 70)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 2.0
+next_weapon = ExtResource("6_cqmes")
+
+[node name="BackAndForth3" type="Node2D" parent="Movement"]
+position = Vector2(50, 70)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 2.0
+next_weapon = ExtResource("6_cqmes")
+
+[node name="BackAndForth4" type="Node2D" parent="Movement"]
+position = Vector2(215, 70)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 2.0
+next_weapon = ExtResource("6_cqmes")
+
+[node name="BackAndForth5" type="Node2D" parent="Movement"]
+position = Vector2(50, 70)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 2.0
+next_weapon = ExtResource("6_cqmes")
+
+[node name="BackAndForth6" type="Node2D" parent="Movement"]
+position = Vector2(215, 70)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 2.0
+next_weapon = ExtResource("6_cqmes")
+
+[node name="BackAndForth7" type="Node2D" parent="Movement"]
+position = Vector2(50, 70)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 2.0
+next_weapon = ExtResource("6_cqmes")
+
+[node name="BackAndForth8" type="Node2D" parent="Movement"]
+position = Vector2(215, 70)
+script = ExtResource("5_x1iqc")
+wait = 0
+speed = 2.0
+next_weapon = ExtResource("6_cqmes")
+
+[node name="Movement_Discard" type="Node" parent="."]

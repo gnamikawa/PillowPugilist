@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_n5s3n"]
 [ext_resource type="Texture2D" uid="uid://dj4luvyx36srv" path="res://assets/sprites/EnemyPillow.png" id="2_ql4lp"]
 [ext_resource type="Script" path="res://scripts/weapon.gd" id="3_4bqf4"]
-[ext_resource type="PackedScene" uid="uid://doedj3fbb1ahs" path="res://data/bullets/default_enemy_bullet.tscn" id="4_i0bcx"]
+[ext_resource type="PackedScene" uid="uid://doedj3fbb1ahs" path="res://data/bullets/wavy_enemy_bullet.tscn" id="4_6gsij"]
 [ext_resource type="Script" path="res://scripts/movement.gd" id="5_joqvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewjyx"]
@@ -57,10 +57,9 @@ shape = SubResource("CircleShape2D_bsaby")
 
 [node name="Weapon" type="Node" parent="."]
 script = ExtResource("3_4bqf4")
-shots_per_minute = 120.0
-bullet_scene = ExtResource("4_i0bcx")
+shots_per_minute = 10.0
+bullet_scene = ExtResource("4_6gsij")
 
 [node name="Movement" type="Node" parent="."]
 script = ExtResource("5_joqvw")
-movement_pattern = 1
 movement_speed = 25

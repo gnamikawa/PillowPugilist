@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cobwkmurjat6j"]
+
+[ext_resource type="Script" path="res://scripts/weapon.gd" id="1_c5hw4"]
+[ext_resource type="PackedScene" uid="uid://d0rxrdc8ft3gr" path="res://scenes/bullet.tscn" id="2_767xy"]
+
+[node name="Weapon" type="Node"]
+script = ExtResource("1_c5hw4")
+bullet_scene = ExtResource("2_767xy")
+pattern_value = 6

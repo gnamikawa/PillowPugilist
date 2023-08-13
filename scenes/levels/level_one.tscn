@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://dji0vu4e0xoqh"]
+[gd_scene load_steps=19 format=3 uid="uid://dji0vu4e0xoqh"]
 
 [ext_resource type="PackedScene" uid="uid://behsc7nbuvu2g" path="res://scenes/game_manager.tscn" id="1_sg22g"]
 [ext_resource type="Script" path="res://scripts/spawner.gd" id="2_8e330"]
 [ext_resource type="AudioStream" uid="uid://e5anakkfijur" path="res://assets/sfx/level_one.wav" id="2_8fbdt"]
 [ext_resource type="AudioStream" uid="uid://cxrwq8sppmiel" path="res://assets/sfx/level_one_intro.wav" id="3_hyjgx"]
-[ext_resource type="PackedScene" uid="uid://doedj3fbb1ahs" path="res://data/bullets/default_enemy_bullet.tscn" id="4_3plgw"]
+[ext_resource type="PackedScene" uid="uid://cal25u8or433y" path="res://data/enemies/fire_enemy.tscn" id="5_cnh6b"]
+[ext_resource type="PackedScene" uid="uid://bts6shl4lsmj5" path="res://data/enemies/level1_boss.tscn" id="5_n757m"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2t7ie"]
 animation = &"Music Introduction"
@@ -30,6 +31,25 @@ states/Start/position = Vector2(-67, 295)
 transitions = ["Start", "Music Intro", SubResource("AnimationNodeStateMachineTransition_c70mf"), "Music Intro", "Music Loop", SubResource("AnimationNodeStateMachineTransition_0dbjg")]
 graph_offset = Vector2(-330.485, 183)
 
+[sub_resource type="Animation" id="Animation_mnv1n"]
+resource_name = "Music Introduction"
+length = 19.2
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AudioStreamPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_hyjgx")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/0/use_blend = true
+
 [sub_resource type="Animation" id="Animation_51xd0"]
 resource_name = "Music Loop"
 length = 38.4
@@ -53,45 +73,11 @@ tracks/0/use_blend = true
 [sub_resource type="Animation" id="Animation_2y0ei"]
 length = 0.001
 
-[sub_resource type="Animation" id="Animation_mnv1n"]
-resource_name = "Music Introduction"
-length = 19.2
-tracks/0/type = "audio"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../AudioStreamPlayer")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("3_hyjgx")
-}],
-"times": PackedFloat32Array(0)
-}
-tracks/0/use_blend = true
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7ghwf"]
 _data = {
 "Music Introduction": SubResource("Animation_mnv1n"),
 "Music Loop": SubResource("Animation_51xd0"),
 "RESET": SubResource("Animation_2y0ei")
-}
-
-[sub_resource type="Animation" id="Animation_trlsr"]
-resource_name = "Slide In"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(132, 500), Vector2(132, 400)]
 }
 
 [sub_resource type="Animation" id="Animation_7bxrw"]
@@ -107,6 +93,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(132, 400)]
+}
+
+[sub_resource type="Animation" id="Animation_trlsr"]
+resource_name = "Slide In"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(132, 500), Vector2(132, 400)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_edt1p"]
@@ -139,7 +140,35 @@ libraries = {
 "": SubResource("AnimationLibrary_edt1p")
 }
 
-[node name="Spawner" type="Node2D" parent="WavesHolder/Waves" index="0"]
-position = Vector2(-70, 70)
+[node name="BossSpawner" type="Node2D" parent="WavesHolder/Waves" index="0"]
+position = Vector2(140, -47)
 script = ExtResource("2_8e330")
-enemy_scenes = ExtResource("4_3plgw")
+enemy_scenes = ExtResource("5_n757m")
+spawn_cooldown = 1
+
+[node name="Spawner" type="Node2D" parent="WavesHolder/Waves" index="1"]
+position = Vector2(-23, 203)
+script = ExtResource("2_8e330")
+enemy_scenes = ExtResource("5_cnh6b")
+enemy_spawn_times = 5
+spawn_cooldown = 1
+amount_to_spawn = 3
+direction = Vector2(1, 0.5)
+
+[node name="Spawner2" type="Node2D" parent="WavesHolder/Waves" index="2"]
+position = Vector2(209, -47)
+script = ExtResource("2_8e330")
+enemy_scenes = ExtResource("5_cnh6b")
+enemy_spawn_times = 7
+spawn_cooldown = 1
+amount_to_spawn = 10
+direction = Vector2(-0.5, 1)
+
+[node name="Spawner3" type="Node2D" parent="WavesHolder/Waves" index="3"]
+position = Vector2(-23, 385)
+script = ExtResource("2_8e330")
+enemy_scenes = ExtResource("5_cnh6b")
+enemy_spawn_times = 9
+spawn_cooldown = 1
+amount_to_spawn = 10
+direction = Vector2(1, -1)

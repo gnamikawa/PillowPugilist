@@ -6,6 +6,8 @@ extends Node2D
 @export var speed = 0.2
 @export var next_weapon: PackedScene
 
+@onready var movement: Node = $"../../Movement"
+
 var timer = 0
 
 func next(delta, node2D: Node2D):
@@ -22,4 +24,6 @@ func next(delta, node2D: Node2D):
 					if c is Weapon:
 						c.queue_free()
 				boss.add_child(next_weapon.instantiate())
-			queue_free()
+			timer = 0
+			movement.remove_child(self)
+			movement.add_child(self)
