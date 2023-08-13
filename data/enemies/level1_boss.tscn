@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://scripts/boss_controller.gd" id="5_q0whv"]
 [ext_resource type="Script" path="res://scripts/boss_movement.gd" id="5_x1iqc"]
 [ext_resource type="PackedScene" uid="uid://cobwkmurjat6j" path="res://data/weapons/no_weapon.tscn" id="6_5ed0q"]
-[ext_resource type="PackedScene" uid="uid://evdttodblsnm" path="res://data/weapons/aim_laser_weapon.tscn" id="6_cqmes"]
+[ext_resource type="PackedScene" uid="uid://kh8bd0qio07j" path="res://data/weapons/laser_weapon.tscn" id="6_cqmes"]
 [ext_resource type="PackedScene" uid="uid://bfcj23xaqlxoj" path="res://data/weapons/sprinkler_weapon.tscn" id="6_y87q6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ewjyx"]
