@@ -47,7 +47,9 @@ animations = [{
 radius = 2.0
 
 [node name="PlayerBody" type="CharacterBody2D" groups=["player"]]
+position = Vector2(0, -100)
 script = ExtResource("1_06625")
+angle_spread = 0.1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 1000
@@ -63,8 +65,9 @@ shape = SubResource("CircleShape2D_vhybu")
 
 [node name="Weapon" type="Node" parent="."]
 script = ExtResource("3_g0b80")
-shots_per_minute = 360.0
+shots_per_minute = 900.0
 bullet_scene = ExtResource("2_iw228")
 clip = ExtResource("6_ww28n")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Weapon"]
+position = Vector2(-7, -6)

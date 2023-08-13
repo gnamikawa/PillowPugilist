@@ -96,6 +96,6 @@ libraries = {
 }
 
 [node name="MusicPlayerA" type="AudioStreamPlayer2D" parent="."]
+volume_db = -80.0
 
 [node name="MusicPlayerB" type="AudioStreamPlayer2D" parent="."]
-volume_db = -80.0
